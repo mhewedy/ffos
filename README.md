@@ -10,6 +10,7 @@ Features:
 2. Search for customer by phone number.
 3. Place a new Order. (either packed Order or Delivery Order)
 4. Confirm a Delivery Order.
+5. Data being saved in Files by default ([see section of installation](#installation)), but you can make it save data in memory only.
 
 Installation:
 ========
