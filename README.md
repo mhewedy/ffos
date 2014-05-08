@@ -4,8 +4,12 @@ ffos
 Fast Food Ordering System
 
 Download and unzip [ffos.zip](https://github.com/MuhammadHewedy/ffos/blob/master/ffos.zip) into your home directory.
+*    On windows7, put it in `C:\Users\<username>\`
+*    On linux, put it in `/home/<username>/`  
+Where `<username>` is your `username`
 
-Run the example here: [Test.java](https://github.com/MuhammadHewedbey/ffos/blob/master/test/Test.java)
+Run the example here: [Test.java](https://github.com/MuhammadHewedy/ffos/blob/master/test/Test.java)
+
 
 The output should be:
 
