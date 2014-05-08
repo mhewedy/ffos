@@ -36,9 +36,6 @@ public class OrderedItem{
 
     @Override
     public String toString() {
-        return "OrderedItem{" +
-                "item=" + item +
-                ", quantity=" + quantity +
-                '}';
+      return "{" +item + "}\t" + quantity;
     }
 }

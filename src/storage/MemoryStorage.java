@@ -3,26 +3,29 @@ package storage;
 import model.Customer;
 import model.DeliveryOrder;
 import model.Item;
-import model.PackagedOrder;
+import model.Order;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * Created by mhewedy on 07/05/14.
  */
-class InMemoryStorage extends Storage {
+class MemoryStorage extends Storage {
 
     private static List<Customer> customerList = new ArrayList<>();
     private static List<Item> itemList = new ArrayList<>();
-    private static List<PackagedOrder> orderList = new ArrayList<>();
+    private static List<Order> orderList = new ArrayList<>();
     private static AtomicLong orderIdGenerator = new AtomicLong();
 
     @Override
-    public void saveCustomer(Customer customer) {
-        customerList.add(customer);
+    public boolean saveCustomer(Customer customer) {
+        if (searchCustomerByPhoneNumber(customer.getPhoneNumber()) == null){
+            customerList.add(customer);
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -47,7 +50,7 @@ class InMemoryStorage extends Storage {
     }
 
     @Override
-    public void placeOrder(PackagedOrder order) {
+    public void placeOrder(Order order) {
         orderList.add(order);
     }
 

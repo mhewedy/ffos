@@ -6,13 +6,21 @@ import storage.Storage;
 /**
  * Created by mhewedy on 08/05/14.
  */
-public class DeliveryOrder extends PackagedOrder {
+public class DeliveryOrder extends Order {
 
     private static final double MIN_ORDER_PRICE = 50;
 
     private Customer customer;
     private DeliveryStatus deliveryStatus = DeliveryStatus.NotDelivered;
 
+    /**
+     * used to compare only
+     * @param orderId
+     */
+    public DeliveryOrder(long orderId){
+        super(null, null);
+        this.orderId = orderId;
+    }
     public DeliveryOrder(Date date, Time time) {
         super(date, time);
     }
@@ -60,9 +68,6 @@ public class DeliveryOrder extends PackagedOrder {
 
     @Override
     public String toString() {
-        return super.toString() + "DeliveryOrder{" +
-                "customer=" + customer +
-                ", deliveryStatus=" + deliveryStatus +
-                '}';
+        return super.toString() + "\t{" + this.customer + "}\t" + this.deliveryStatus;
     }
 }

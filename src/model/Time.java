@@ -7,6 +7,7 @@ public class Time {
     private int h, m;
 
     public Time(int h, int m) {
+        // TODO : validate input first
         this.h = h;
         this.m = m;
     }
@@ -21,9 +22,6 @@ public class Time {
 
     @Override
     public String toString() {
-        return "Time{" +
-                "h=" + h +
-                ", m=" + m +
-                '}';
+        return h + ":" + m;
     }
 }

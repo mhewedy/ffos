@@ -36,10 +36,6 @@ public class Item {
     }
 
     public String toString() {
-        return "Item{" +
-                "name='" + name + '\'' +
-                ", price=" + price +
-                ", description='" + description + '\'' +
-                '}';
+       return name + "\t" + price + "\t" + description;
     }
 }

@@ -7,6 +7,7 @@ public class Date {
     private int y, m, d;
 
     public Date(int y, int m, int d) {
+        // TODO validate input first
         this.y = y;
         this.m = m;
         this.d = d;
@@ -26,10 +27,6 @@ public class Date {
 
     @Override
     public String toString() {
-        return "Date{" +
-                "y=" + y +
-                ", m=" + m +
-                ", d=" + d +
-                '}';
+        return y +"-" + m + "-" + d;
     }
 }

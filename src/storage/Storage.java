@@ -3,7 +3,7 @@ package storage;
 import model.Customer;
 import model.DeliveryOrder;
 import model.Item;
-import model.PackagedOrder;
+import model.Order;
 
 import java.util.List;
 
@@ -13,10 +13,10 @@ import java.util.List;
 public abstract class Storage {
 
     public static Storage get() {
-        return new InMemoryStorage();
+        return new FileStorage();
     }
 
-    public abstract void saveCustomer(Customer customer);
+    public abstract boolean saveCustomer(Customer customer);
 
     public abstract Customer searchCustomerByPhoneNumber(String phoneNumber);
 
@@ -24,7 +24,7 @@ public abstract class Storage {
 
     public abstract long nextOrderId();
 
-    public abstract void placeOrder(PackagedOrder order);
+    public abstract void placeOrder(Order order);
 
     public abstract void confirmOrder(DeliveryOrder order);
 }

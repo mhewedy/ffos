@@ -13,7 +13,11 @@ public class Customer {
     private String address;
 
     public Customer(String fName, String lName, String phoneNumber, String address) {
-        this.name = ((fName == null ? "" : fName) + " " + (lName == null ? "" : lName)).trim();
+        this(((fName == null ? "" : fName) + " " + (lName == null ? "" : lName)).trim(), phoneNumber, address);
+    }
+
+    public Customer(String name, String phoneNumber, String address) {
+        this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
     }
@@ -22,9 +26,9 @@ public class Customer {
         return Storage.get().searchCustomerByPhoneNumber(phoneNumber);
     }
 
-    public void save() throws InvalidObjectException {
+    public boolean save() throws InvalidObjectException {
         validate();
-        Storage.get().saveCustomer(this);
+        return Storage.get().saveCustomer(this);
     }
 
     private void validate() throws InvalidObjectException {
@@ -68,10 +72,6 @@ public class Customer {
     }
 
     public String toString() {
-        return "Customer{" +
-                "name='" + name + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", address='" + address + '\'' +
-                '}';
+        return name + "\t" + phoneNumber + "\t" + address;
     }
 }

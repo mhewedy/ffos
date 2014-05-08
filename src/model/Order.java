@@ -8,17 +8,17 @@ import java.util.List;
 /**
  * Created by mhewedy on 07/05/14.
  */
-public class PackagedOrder {
+public class Order {
 
     private static final double DISCOUNT_TOTAL = 200.0;
     private static final double DISCOUNT_RATION = 0.10;
 
-    private long orderId;
+    protected long orderId;
     private List<OrderedItem> orderedItemList = new ArrayList<>();
     private Date date;
     private Time time;
 
-    public PackagedOrder(Date date, Time time) {
+    public Order(Date date, Time time) {
         this.orderId = Storage.get().nextOrderId();
         this.date = date;
         this.time = time;
@@ -67,20 +67,12 @@ public class PackagedOrder {
         }
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public Time getTime() {
-        return time;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        PackagedOrder that = (PackagedOrder) o;
+        Order that = (Order) o;
 
         if (orderId != that.orderId) return false;
 
@@ -94,12 +86,6 @@ public class PackagedOrder {
 
     @Override
     public String toString() {
-        return "PackagedOrder{" +
-                "orderId=" + orderId +
-                ", orderedItemList=" + orderedItemList +
-                ", date=" + date +
-                ", time=" + time +
-                ", totalPrice=" + getTotalPrice() +
-                '}';
+        return orderId + "\t{" + orderedItemList + "}\t{" + date + "}\t{" + time + "}\t" + getTotalPrice();
     }
 }
