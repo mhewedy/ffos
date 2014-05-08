@@ -10,10 +10,9 @@ Run the example here: [Test.java](https://github.com/MuhammadHewedbey/ffos/blob/
 The output should be:
 
     ****Menu****
-    Picked up JAVA_TOOL_OPTIONS: -javaagent:/usr/share/java/jayatanaag.jar
-    [Cheese Burger	9.99	Cheese Burger Sandwitch, Chicken	8.99	Chicken Sandwitch, Falafel	8.99	Falafel ]
-    [Cheese Burger	9.99	Cheese Burger Sandwitch, Chicken	8.99	Chicken Sandwitch, Falafel	8.99	Falafel ]
-    [Cheese Burger	9.99	Cheese Burger Sandwitch, Chicken	8.99	Chicken Sandwitch, Falafel	8.99	Falafel ]
+    Cheese Burger	9.99	Cheese Burger Sandwitch
+    Chicken	8.99	Chicken Sandwitch
+    Falafel	8.99	Falafel
 
     Customer saved.
 

@@ -14,7 +14,7 @@ public class Test {
 
         System.out.println("****Menu****");
         for (Item item : itemList){
-            System.out.println(itemList);
+            System.out.println(item);
         }
 
         // Save Customer:
